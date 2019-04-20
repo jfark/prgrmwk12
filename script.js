@@ -1,8 +1,13 @@
-Vue.component ('your-book', {
+Vue.component ('the-book', {
 	props: ['author', 'title', 'didIEmbarassMyself', 'inscription', 'writingGroupFriend'],
 	template: `
-		<div class="many-books">
-	
+		<tr>
+			<td>{{author}}</td>
+			<td>{{title}}</td>
+			<td>{{didIEmbarassMyself}}</td>
+			<td>{{inscription}}</td>
+			<td>{{writingGroupFriend}}</td>
+		</tr>
 	`
 });
 
