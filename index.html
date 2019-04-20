@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Jessa's Signed Books Collection</title>
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Jessa's Signed Books</h1>
+	</header>
+	<main>
+		<p>Before MCAD, I was enrolled in a part-time fiction MFA program at Temple University for a year, and I still try to write fiction, so sometimes I go to readings and get the authors to sign books that I buy from them.</p>
+		<div class="soManyBooks">
+			<table>
+				<thead>
+					<tr>
+						<td>Author</td>
+						<td>Title</td>
+						<td>Did I embarass myself during the book signing?</td>
+						<td>Inscription</td>
+						<td>Was I formerly in a writing group with this author?</td>
+						<td>Delete Book?</td>
+					</tr>
+				</thead>
+				<tbody class="soManyBooks" v-cloak>
+					<tr v-for="book in signedBook" v-cloak>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.author}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}" class="title">{{book.title}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.didIEmbarassMyself}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.inscription}}</td>
+						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.writingGroupFriend}}</td>
+						<td><button type="button" v-on:click="deleteBook(book)">Delete</button></td>
+					</tr>
+				</tbody>
+			</table>
+		
+			<form v-on:submit.prevent="addBook">
+				<fieldset>
+					<legend>Add a signed book of your own to the list: </legend>
+					<div class="form-group">
+						<label>Author: <input v-model="authorInput" type="text" /></label>
+						<label>Title: <input v-model="titleInput" type="text"/></label>
+						<label>Did you embarass yourself during the book signing? 
+							<select v-model="awkwardInput">
+								<option v-bind:value="true">True</option>
+								<option v-bind:value="false">False</option>
+							</select>
+						</label>
+						<label>Inscription: <input v-model="inscriptionInput"/></label>
+						<label>Do you know the author? 
+							<select v-model="friendInput">
+								<option v-bind:value="true">True</option>
+								<option v-bind:value="false">False</option>
+							</select>
+						</label>
+					</div>
+					<button v-bind:disabled="!authorInput" type="submit">Add Book</button>
+				</fieldset>
+			</form>
+		</div>
+			
+		
+		<h2>Key:</h2>
+		
+		<p class="embarassing">A tomato-red background indicates that I embarassed myself with the things that I stumbled over saying to the author at the time of getting my respective book signed.</p>
+		<p class="oldfriend">A deep sky blue border calls out the one young author who was once a fellow peer in a writing group we belonged to in New York between 2007 and 2008.</p>
+		
+	</main>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="script.js"></script>
+</body>
+</html>

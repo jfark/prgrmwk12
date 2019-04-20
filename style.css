@@ -1,0 +1,67 @@
+body {
+	font-family: sans-serif;
+}
+
+header {
+	letter-spacing: .7em;
+	margin: 50px;
+}
+
+main {
+	margin: 50px;
+}
+
+[v-cloak] {
+	display: none;
+}
+
+h1, h2 {
+	color: olive;
+}
+
+table {
+	background: lightyellow;
+}
+
+thead {
+	text-align: center;
+	font-style: italic;
+	background: darkseagreen;
+	color: lightyellow;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+tr, td {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.title {
+	text-decoration: underline;
+}
+
+.embarassing {
+	background: tomato;
+}
+
+.oldfriend {
+	
+	border: 10px solid deepskyblue;
+}
+
+form {
+	padding: 50px 0px;
+}
+
+fieldset {
+	color: olive;
+}
+
+label {
+	display: block;
+	padding: 10px 0px;
+	font-style: italic;
+	font-weight: bold;
+}
+
