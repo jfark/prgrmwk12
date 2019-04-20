@@ -1,3 +1,11 @@
+Vue.component ('your-book', {
+	props: ['author', 'title', 'didIEmbarassMyself', 'inscription', 'writingGroupFriend'],
+	template: `
+		<div class="many-books">
+	
+	`
+});
+
 var signedBooksCollection = new Vue ({
 	el: ".soManyBooks",
 	data: {
@@ -45,15 +53,6 @@ var signedBooksCollection = new Vue ({
 ]
 	},
 	methods: {
-		deleteBook: function(bookObject) {
-			this.signedBook = this.signedBook.filter (function(book) {
-				if (book.title !== bookObject.title) {
-					return true;
-				} else {
-					return false;
-				}
-			})
-		},
 		addBook: function(){
 			let newBook = {
 				author: this.authorInput,
