@@ -11,7 +11,7 @@
 	</header>
 	<main>
 		<p>Before MCAD, I was enrolled in a part-time fiction MFA program at Temple University for a year, and I still try to write fiction, so sometimes I go to readings and get the authors to sign books that I buy from them.</p>
-		<div class="soManyBooks">
+		<div class="soManyBooks" v-cloak>
 			<table>
 				<thead>
 					<tr>
@@ -22,19 +22,15 @@
 						<td>Was I formerly in a writing group with this author?</td>
 					</tr>
 				</thead>
-				<tbody class="soManyBooks" v-cloak>
+				<tbody>
 					<tr is="the-book" 
 					v-for="book in signedBook"
+					v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}"
 					v-bind:author="book.author"
 					v-bind:title="book.title"
 					v-bind:didIEmbarassMyself="book.didIEmbarassMyself"
 					v-bind:inscription="book.inscription"
 					v-bind:writingGroupFriend="book.writingGroupFriend">
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.author}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}" class="title">{{book.title}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.didIEmbarassMyself}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.inscription}}</td>
-						<td v-bind:class="{embarassing: book.didIEmbarassMyself, oldfriend: book.writingGroupFriend}">{{book.writingGroupFriend}}</td>
 					</tr>
 				</tbody>
 			</table>
