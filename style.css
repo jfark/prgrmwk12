@@ -41,11 +41,11 @@ tr, td {
 	text-decoration: underline;
 }
 
-.embarassing {
+.embarassing td {
 	background: tomato;
 }
 
-.oldfriend {
+.oldfriend td {
 	
 	border: 10px solid deepskyblue;
 }
