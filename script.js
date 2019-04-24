@@ -1,12 +1,12 @@
 Vue.component ('the-book', {
-	props: ['author', 'title', 'didIEmbarassMyself', 'inscription', 'writingGroupFriend'],
+	props: ['author', 'title', 'embarass', 'inscription', 'friend'],
 	template: `
 		<tr>
 			<td>{{author}}</td>
 			<td>{{title}}</td>
-			<td>{{didIEmbarassMyself}}</td>
+			<td>{{embarass ? "true" : "false"}}</td>
 			<td>{{inscription}}</td>
-			<td>{{writingGroupFriend}}</td>
+			<td>{{friend}}</td>
 		</tr>
 	`
 });
